@@ -115,7 +115,7 @@ func (c *Config) Open(id string, logger log.Logger) (connector.Connector, error)
 		c.Domain,
 		c.Host,
 		c.AdminUsername,
-		os.Getenv("KEYSTONE_PASSWORD")) ,
+		os.Getenv("KEYSTONE_PASSWORD"),
 		logger,
 	}, nil
 }
