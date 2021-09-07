@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 
 	"github.com/dexidp/dex/connector"
 	"github.com/dexidp/dex/pkg/log"
@@ -114,7 +115,7 @@ func (c *Config) Open(id string, logger log.Logger) (connector.Connector, error)
 		c.Domain,
 		c.Host,
 		c.AdminUsername,
-		c.AdminPassword,
+		os.Getenv("KEYSTONE_PASSWORD")) ,
 		logger,
 	}, nil
 }
